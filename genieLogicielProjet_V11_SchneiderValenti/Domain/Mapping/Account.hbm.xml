@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="Domain"
+                   namespace="Domain">
+
+  <class name="Account" table="compte">
+    <id name="Id" column="compte_id" type="int">
+      <generator class="native"></generator>
+    </id>
+    <property name="Title" column="compte_titre" not-null="true"/>
+    <property name="Login" column="compte_nomUtil" not-null="true"/>
+    <property name="Password" column="compte_mdp" not-null="true"/>
+    <many-to-one name="User" class="User" column="util_id"/>
+  </class>
+
+</hibernate-mapping>

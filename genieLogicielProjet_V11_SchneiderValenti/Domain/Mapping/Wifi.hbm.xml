@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="Domain"
+                   namespace="Domain">
+
+  <class name="Wifi" table="wifi">
+    <id name="WifiId" column="wifi_id" type="int">
+      <generator class="native"></generator>
+    </id>
+    <property name="Title" column="wifi_titre" not-null="true"/>
+    <property name="SSID" column="wifi_ssid" not-null="true"/>
+    <property name="Password" column="wifi_mdp" not-null="true"/>
+    <many-to-one name="User" class="User" column="util_id"/>
+  </class>
+
+</hibernate-mapping>
